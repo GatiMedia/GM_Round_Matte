@@ -2,19 +2,19 @@ Group {
  name GM_Round_Matte
  tile_color 0xffbb56ff
  selected true
- xpos 2050
- ypos -226
+ xpos 1280
+ ypos 470
  addUserKnob {20 User}
  addUserKnob {7 round1 l Roundness R 0 200}
  round1 40
  addUserKnob {7 contr l "Edge Contrast"}
  contr 0.5
- addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 ""}
  addUserKnob {6 conc l "Keep Concave Angle" +STARTLINE}
  conc true
  addUserKnob {6 prem l Premult +STARTLINE}
  prem true
- addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 ""}
  addUserKnob {7 mix l Mix}
  mix 1
  addUserKnob {26 ""}
@@ -33,13 +33,13 @@ Group {
   xpos -336
   ypos -486
  }
-set N50ef87d0 [stack 0]
+set N6807d880 [stack 0]
  Dot {
   name Dot23
   xpos -556
   ypos -486
  }
-set Nea25f70 [stack 0]
+set N6807d500 [stack 0]
  Clamp {
   name Clamp
   tile_color 0x555555ff
@@ -63,20 +63,20 @@ set Nea25f70 [stack 0]
    name Input
    xpos 0
   }
-set Nea41890 [stack 0]
+set N6807ce00 [stack 0]
   Dot {
    name Dot1
    xpos 366
    ypos 5
   }
-set Nea46200 [stack 0]
-push $Nea46200
+set N6807ca80 [stack 0]
+push $N6807ca80
   Invert {
    name Invert1
    xpos 177
    ypos 34
   }
-push $Nea46200
+push $N6807ca80
   Switch {
    inputs 2
    which {{"\[value parent.chew]>=0?0:1"}}
@@ -108,7 +108,7 @@ push $Nea46200
    addUserKnob {7 JSplineVFake}
    JSplineVFake {{curve i l 0.9958 k x5 0.95 0.8 x20 0.5 x40 0.3 x80 0.2 l x200 0.1}}
   }
-set Nea7ad80 [stack 0]
+set N669c1880 [stack 0]
   Merge2 {
    inputs 2
    operation minus
@@ -116,7 +116,7 @@ set Nea7ad80 [stack 0]
    xpos 332
    ypos 218
   }
-push $Nea7ad80
+push $N669c1880
   Switch {
    inputs 2
    which {{"\[value parent.chew]>=0?0:1"}}
@@ -135,7 +135,7 @@ push $Nea7ad80
    xpos 177
    ypos 446
   }
-push $Nea41890
+push $N6807ce00
   ShuffleCopy {
    inputs 2
    name ShuffleCopy1
@@ -171,20 +171,20 @@ push $Nea41890
    name Input
    xpos 0
   }
-set Neae4930 [stack 0]
+set N60969c00 [stack 0]
   Dot {
    name Dot1
    xpos 366
    ypos 5
   }
-set Neae92a0 [stack 0]
-push $Neae92a0
+set N60969880 [stack 0]
+push $N60969880
   Invert {
    name Invert1
    xpos 177
    ypos 34
   }
-push $Neae92a0
+push $N60969880
   Switch {
    inputs 2
    which {{"\[value parent.chew]>=0?0:1"}}
@@ -216,7 +216,7 @@ push $Neae92a0
    addUserKnob {7 JSplineVFake}
    JSplineVFake {{curve i l 0.9958 k x5 0.95 0.8 x20 0.5 x40 0.3 x80 0.2 l x200 0.1}}
   }
-set Neb1de30 [stack 0]
+set N60968700 [stack 0]
   Merge2 {
    inputs 2
    operation minus
@@ -224,7 +224,7 @@ set Neb1de30 [stack 0]
    xpos 332
    ypos 218
   }
-push $Neb1de30
+push $N60968700
   Switch {
    inputs 2
    which {{"\[value parent.chew]>=0?0:1"}}
@@ -243,7 +243,7 @@ push $Neb1de30
    xpos 177
    ypos 446
   }
-push $Neae4930
+push $N60969c00
   ShuffleCopy {
    inputs 2
    name ShuffleCopy1
@@ -262,14 +262,14 @@ push $Neae4930
    ypos 556
   }
  end_group
-set Neadb830 [stack 0]
+set N6a8a8c00 [stack 0]
  Dot {
   name Dot1
   xpos -776
   ypos -246
  }
-push $Neadb830
-push $Nea25f70
+push $N6a8a8c00
+push $N6807d500
  Merge2 {
   inputs 2
   operation mask
@@ -296,11 +296,12 @@ push $Nea25f70
   xpos -480
   ypos -256
  }
-push $N50ef87d0
+push $N6807d880
  Copy {
   inputs 2
   from0 rgba.alpha
   to0 rgba.alpha
+  mix {{parent.mix}}
   name Copy
   tile_color 0x555555ff
   xpos -370
