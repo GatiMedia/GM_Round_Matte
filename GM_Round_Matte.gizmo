@@ -2,8 +2,8 @@ Group {
  name GM_Round_Matte
  tile_color 0xffbb56ff
  selected true
- xpos 1280
- ypos 470
+ xpos 1390
+ ypos 1046
  addUserKnob {20 User}
  addUserKnob {7 round1 l Roundness R 0 200}
  round1 40
@@ -17,6 +17,8 @@ Group {
  addUserKnob {26 ""}
  addUserKnob {7 mix l Mix}
  mix 1
+ addUserKnob {26 ""}
+ addUserKnob {22 tut l Tutorial t "Opens the relevant tutorial from my site in your browser. " -STARTLINE T "import os\nimport sys\n\ntry:\n    import subprocess\n    def _run(cmd, shell, wait):\n        opener = subprocess.Popen(cmd, shell=shell)\n        if wait:\n            opener.wait()\n        return opener.pid\nexcept ImportError:\n    import popen2\n    def _run(cmd, shell, wait):\n        opener = popen2.Popen3(cmd)\n        if wait:\n            opener.wait()\n        return opener.pid\n\ndef _open(url, wait=0):\n    if sys.platform == \"darwin\":\n        cmd = \[\"open\", url]\n    elif hasattr(os, \"startfile\"):\n        return os.startfile(url)\n    elif os.environ.has_key(\"KDE_FULL_SESSION\") or os.environ.has_key(\"KDE_MULTIHEAD\") or \\\n        os.environ.has_key(\"GNOME_DESKTOP_SESSION_ID\") or os.environ.has_key(\"GNOME_KEYRING_SOCKET\"):\n        cmd = \[\"xdg-open\", url]\n    else:\n        raise OSError, \"Desktop not supported.\"\n\n    return _run(cmd, 0, wait)\n\n_open('https://www.gatimedia.co.uk/round-matte')\n"}
  addUserKnob {26 ""}
  addUserKnob {26 TEXT l "" +STARTLINE T "<font color=#808080 size=\"5\" >1.01 version</font>"}
  addUserKnob {26 HeadlineB l "" +STARTLINE T "<font color=#808080 size=\"2\">GM_Round_Matte© by Attila Gasparetz</font>"}
@@ -33,13 +35,13 @@ Group {
   xpos -336
   ypos -486
  }
-set N6807d880 [stack 0]
+set Nab011500 [stack 0]
  Dot {
   name Dot23
   xpos -556
   ypos -486
  }
-set N6807d500 [stack 0]
+set Nab011180 [stack 0]
  Clamp {
   name Clamp
   tile_color 0x555555ff
@@ -63,20 +65,20 @@ set N6807d500 [stack 0]
    name Input
    xpos 0
   }
-set N6807ce00 [stack 0]
+set Nab010a80 [stack 0]
   Dot {
    name Dot1
    xpos 366
    ypos 5
   }
-set N6807ca80 [stack 0]
-push $N6807ca80
+set Nab010700 [stack 0]
+push $Nab010700
   Invert {
    name Invert1
    xpos 177
    ypos 34
   }
-push $N6807ca80
+push $Nab010700
   Switch {
    inputs 2
    which {{"\[value parent.chew]>=0?0:1"}}
@@ -108,7 +110,7 @@ push $N6807ca80
    addUserKnob {7 JSplineVFake}
    JSplineVFake {{curve i l 0.9958 k x5 0.95 0.8 x20 0.5 x40 0.3 x80 0.2 l x200 0.1}}
   }
-set N669c1880 [stack 0]
+set Ncc9a3500 [stack 0]
   Merge2 {
    inputs 2
    operation minus
@@ -116,7 +118,7 @@ set N669c1880 [stack 0]
    xpos 332
    ypos 218
   }
-push $N669c1880
+push $Ncc9a3500
   Switch {
    inputs 2
    which {{"\[value parent.chew]>=0?0:1"}}
@@ -135,7 +137,7 @@ push $N669c1880
    xpos 177
    ypos 446
   }
-push $N6807ce00
+push $Nab010a80
   ShuffleCopy {
    inputs 2
    name ShuffleCopy1
@@ -171,20 +173,20 @@ push $N6807ce00
    name Input
    xpos 0
   }
-set N60969c00 [stack 0]
+set Nab24d880 [stack 0]
   Dot {
    name Dot1
    xpos 366
    ypos 5
   }
-set N60969880 [stack 0]
-push $N60969880
+set Nab24d500 [stack 0]
+push $Nab24d500
   Invert {
    name Invert1
    xpos 177
    ypos 34
   }
-push $N60969880
+push $Nab24d500
   Switch {
    inputs 2
    which {{"\[value parent.chew]>=0?0:1"}}
@@ -216,7 +218,7 @@ push $N60969880
    addUserKnob {7 JSplineVFake}
    JSplineVFake {{curve i l 0.9958 k x5 0.95 0.8 x20 0.5 x40 0.3 x80 0.2 l x200 0.1}}
   }
-set N60968700 [stack 0]
+set Nab24c380 [stack 0]
   Merge2 {
    inputs 2
    operation minus
@@ -224,7 +226,7 @@ set N60968700 [stack 0]
    xpos 332
    ypos 218
   }
-push $N60968700
+push $Nab24c380
   Switch {
    inputs 2
    which {{"\[value parent.chew]>=0?0:1"}}
@@ -243,7 +245,7 @@ push $N60968700
    xpos 177
    ypos 446
   }
-push $N60969c00
+push $Nab24d880
   ShuffleCopy {
    inputs 2
    name ShuffleCopy1
@@ -262,14 +264,14 @@ push $N60969c00
    ypos 556
   }
  end_group
-set N6a8a8c00 [stack 0]
+set Naf176800 [stack 0]
  Dot {
   name Dot1
   xpos -776
   ypos -246
  }
-push $N6a8a8c00
-push $N6807d500
+push $Naf176800
+push $Nab011180
  Merge2 {
   inputs 2
   operation mask
@@ -296,7 +298,7 @@ push $N6807d500
   xpos -480
   ypos -256
  }
-push $N6807d880
+push $Nab011500
  Copy {
   inputs 2
   from0 rgba.alpha
